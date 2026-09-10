@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a10">
+<title>RAVEN CHAT</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<div id="toast"></div>
+
+<section id="auth" class="auth">
+  <div class="auth-card">
+    <div class="logo">🐦‍⬛</div>
+    <div class="raven">RAVEN</div>
+    <h1>CHAT</h1>
+    <p>Ton royaume. Tes messages. Tes alliés.</p>
+
+    <div class="tabs">
+      <button class="active" data-mode="login">Connexion</button>
+      <button data-mode="signup">Créer un compte</button>
+    </div>
+
+    <form id="authForm">
+      <input id="email" type="email" placeholder="E-mail" required>
+      <input id="password" type="password" placeholder="Mot de passe" minlength="6" required>
+      <input id="displayName" class="hidden" placeholder="Nom affiché">
+      <button class="primary" id="authBtn">Entrer dans RAVEN CHAT</button>
+    </form>
+
+    <small id="authMsg"></small>
+  </div>
+</section>
+
+<div id="app" class="app hidden">
+
+  <aside class="side">
+    <header>
+      <div class="brand">
+        <span>🐦‍⬛</span>
+        <b>RAVEN <i>CHAT</i></b>
+      </div>
+      <button id="newBtn">＋</button>
+    </header>
+
+    <div class="search">
+      ⌕
+      <input id="search" placeholder="Rechercher...">
+    </div>
+
+    <div class="filters">
+      <button class="active" data-filter="all">Chats</button>
+      <button data-filter="groups">Groupes</button>
+    </div>
+
+    <div id="rooms"></div>
+
+    <nav>
+      <button class="active" data-page="chats">💬<small>Chats</small></button>
+      <button data-page="kingdoms">🏰<small>Royaumes</small></button>
+      <button data-page="games">🎮<small>Jeux</small></button>
+      <button data-page="profile">👤<small>Profil</small></button>
+    </nav>
+  </aside>
+
+  <main id="main">
+
+    <section id="welcome" class="welcome">
+      <div>🐦‍⬛</div>
+      <h2>Bienvenue dans RAVEN CHAT</h2>
+      <p>Une messagerie avec une âme de royaume.</p>
+      <button class="primary" id="newWelcome">
+        ＋ Nouvelle discussion
+      </button>
+    </section>
+
+    <section id="room" class="room hidden">
+      <header>
+        <button id="back">‹</button>
+
+        <div id="roomAvatar" class="avatar"></div>
+
+        <div>
+          <b id="roomName"></b>
+          <small id="roomStatus"></small>
+        </div>
+
+        <span class="spacer"></span>
+
+        <button>🔍</button>
+        <button id="more">⋮</button>
+      </header>
+
+      <div id="messages"></div>
+
+      <div class="composer">
+        <button id="emoji">☺</button>
+
+        <label>
+          📎
+          <input id="file" type="file" hidden>
+        </label>
+
+        <input id="message" placeholder="Écrire un message...">
+
+        <button class="send" id="send">➤</button>
+      </div>
+    </section>
+
+    <section id="page" class="page hidden"></section>
+
+  </main>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div id="modalBox"></div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+          </html>
